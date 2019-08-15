@@ -26,6 +26,6 @@ class CreateProfile
      */
     public function handle(Registration $event)
     {
-        //
+        //code
     }
 }
