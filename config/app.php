@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Usajili'),
+    'name' => 'Usajili',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => 'base64:5hJ0wW+peU1EmADP7A/eom7qaAUkZzxgOry8dOV0qto=',
 
     'cipher' => 'AES-256-CBC',
 
