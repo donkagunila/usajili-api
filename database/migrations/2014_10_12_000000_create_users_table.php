@@ -19,10 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('active')->default(1);
+            $table->string('activation_token');
+            $table->boolean('active')->default(false);
             $table->integer('nguvu')->default(1);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
