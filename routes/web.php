@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index')->name('index');
+
+
+// Auth::routes();
+// Route::group(['middleware' => ['web']], function () {
+// 	Route::get('/dashboard', 'HomeController@index')->name('home');
+// });
+
+// Route::middleware('auth:web')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::get('/dashboard', 'HomeController@')

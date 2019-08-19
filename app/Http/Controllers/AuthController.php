@@ -32,7 +32,8 @@ class AuthController extends Controller
              'username' => $request->username,
              'email'    => $request->email,
              'password' => $request->password,
-             'activation_token' => str::random(60),
+             'activation_token' => '',
+             'active' => true,
          ]);
 
 
@@ -42,7 +43,7 @@ class AuthController extends Controller
         // Mail::to($user->email)->queue(new WelcomeEmail($user));
         // event(new Registration($user));
 
-        $user->notify(new SignupActivate($user));
+        // $user->notify(new SignupActivate($user));
 
         // return $this->respondWithToken($token);
         return response()->json(['message' => 'Successfully Registered, email sent']);
