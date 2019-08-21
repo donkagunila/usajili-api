@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->group(function() {
 	Route::post('/help', 'HelpController@store');
 	Route::post('/feedback', 'FeedbackController@store');
+	Route::get('/about', 'VersionController@index');
 });
 
 // Auth Routes.
