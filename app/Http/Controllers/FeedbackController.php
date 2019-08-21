@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Help;
+use App\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 
-class HelpController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,7 @@ class HelpController extends Controller
      */
     public function store(Request $request)
     {
-        // /validate  data
+         // /validate  data
         $validator = Validator::make($request->all(), [
             'content' => ['required']
         ]);
@@ -53,13 +53,13 @@ class HelpController extends Controller
 
         try {
             // Create the Help instance
-            $help = Help::create([
+            $freedback = Feedback::create([
                 'content' => request('content'),
                 'user_id' => $user->id,
             ]);
 
              return response()->json([
-                    'success' => 'Help Received.'], 200);  
+                    'success' => 'Feedback Received.'], 200);  
 
         } catch (Exception $ex) {
             abort(500, 'There was an error, try again');   
@@ -70,10 +70,10 @@ class HelpController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Help  $help
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function show(Help $help)
+    public function show(Feedback $feedback)
     {
         //
     }
@@ -81,10 +81,10 @@ class HelpController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Help  $help
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Help $help)
+    public function edit(Feedback $feedback)
     {
         //
     }
@@ -93,10 +93,10 @@ class HelpController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Help  $help
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Help $help)
+    public function update(Request $request, Feedback $feedback)
     {
         //
     }
@@ -104,10 +104,10 @@ class HelpController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Help  $help
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Help $help)
+    public function destroy(Feedback $feedback)
     {
         //
     }
