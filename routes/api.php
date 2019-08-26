@@ -24,7 +24,8 @@ Route::middleware('auth:api')->group(function() {
 });
 
 	
-Route::post('/checkuser', 'CheckController@checkuser');
+Route::post('/checkusername', 'CheckController@checkuser');
+Route::post('/checkemail', 'CheckController@checkemail');
 
 // Auth Routes.
 Route::group([

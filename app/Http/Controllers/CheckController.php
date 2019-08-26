@@ -22,4 +22,21 @@ class CheckController extends Controller
 
     	return response()->json(['success' => 'ok'], 200);
     }
+
+
+
+    public function checkemail(Request $request)
+    {
+    	 // validate user data
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'email', 'unique:users'],
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
+
+    	return response()->json(['success' => 'ok'], 200);
+
+    }
 }
