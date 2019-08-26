@@ -37,11 +37,8 @@ class AuthController extends Controller
          ]);
 
 
-        // $token = auth()->login($user);
-
         // Send Email to user.
-        // Mail::to($user->email)->queue(new WelcomeEmail($user));
-        // event(new Registration($user));
+        event(new Registration($user));
 
         // $user->notify(new SignupActivate($user));
 

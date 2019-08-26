@@ -2,6 +2,9 @@
 
 namespace App\Listeners;
 
+use App\Profile;
+
+
 use App\Events\Registration;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;

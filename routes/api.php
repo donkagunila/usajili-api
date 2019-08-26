@@ -23,6 +23,9 @@ Route::middleware('auth:api')->group(function() {
 	Route::get('/about', 'VersionController@index');
 });
 
+	
+Route::post('/checkuser', 'CheckController@checkuser');
+
 // Auth Routes.
 Route::group([
 	'prefix' => 'auth'
