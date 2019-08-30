@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
-use App\Providers\NewRegistration;
+use App\Events\Registration;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class WelcomeUserListener
+class AccountSettings
 {
     /**
      * Create the event listener.
@@ -21,10 +21,10 @@ class WelcomeUserListener
     /**
      * Handle the event.
      *
-     * @param  NewRegistration  $event
+     * @param  Registration  $event
      * @return void
      */
-    public function handle(NewRegistration $event)
+    public function handle(Registration $event)
     {
         //
     }
