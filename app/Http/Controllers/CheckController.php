@@ -13,8 +13,7 @@ class CheckController extends Controller
 
     	 // validate user data
         $validator = Validator::make($request->all(), [
-            'username' => ['required', 'unique:users'],
-            'email' => ['required']
+            'username' => ['required', 'unique:users']
         ]);
 
         if($validator->fails()){
