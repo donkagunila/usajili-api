@@ -23,8 +23,15 @@ class AuthController extends Controller
             'password' => ['required', 'min:6']
         ]);
 
-        if($validator->fails()){
-            return response()->json($validator->messages(), 200);
+       if($validator->fails()){
+            $err = array();
+             foreach ($validator->errors()->toArray() as $error)  {
+                    foreach($error as $sub_error){
+                        array_push($err, $sub_error);
+                    }
+                }
+        // return ['error'=>$err];
+            return response()->json([ 'error' => $err], 200);
         }
 
         // create user
@@ -56,8 +63,15 @@ class AuthController extends Controller
             'password' => ['required', 'min:6']
         ]);
 
-        if($validator->fails()){
-            return response()->json($validator->messages(), 200);
+       if($validator->fails()){
+            $err = array();
+             foreach ($validator->errors()->toArray() as $error)  {
+                    foreach($error as $sub_error){
+                        array_push($err, $sub_error);
+                    }
+                }
+        // return ['error'=>$err];
+            return response()->json([ 'error' => $err], 200);
         }
 
         $credentials = request(['email', 'password']);
@@ -107,7 +121,14 @@ class AuthController extends Controller
         ]);
 
          if($validator->fails()){
-            return response()->json($validator->messages(), 200);
+            $err = array();
+             foreach ($validator->errors()->toArray() as $error)  {
+                    foreach($error as $sub_error){
+                        array_push($err, $sub_error);
+                    }
+                }
+        // return ['error'=>$err];
+            return response()->json([ 'error' => $err], 200);
         }
 
     }
