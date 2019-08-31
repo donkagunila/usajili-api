@@ -22,7 +22,7 @@ Route::middleware('auth:api')->group(function() {
 	Route::post('/feedback', 'FeedbackController@store');
 	Route::get('/about', 'VersionController@index');
 	Route::get('/profile', 'UserController@index');
-	Route::get('/profile/update', 'ProfileController@update');
+	Route::post('/profile/update', 'ProfileController@update');
 });
 
 	
