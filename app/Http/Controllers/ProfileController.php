@@ -33,26 +33,50 @@ class ProfileController extends Controller
 	    		'first_name' => request('first_name'),
 	    	]);
 	    	$profile->save();
-    	} elseif (request->input('first_name')) {
+    	} elseif ($request->input('last_name')) {
     		$profile->update([
 	    		'last_name' => request('last_name'),
 	    	]);
 	    	$profile->save();
+    	} elseif ($request->input('date_of_birth')) {
+    		$profile->update([
+	    		'date_of_birth' => request('date_of_birth'),
+	    	]);
+	    	$profile->save();
+    	} elseif ($request->input('mobile_number')) {
+    		$profile->update([
+	    		'mobile_number' => request('mobile_number'),
+	    	]);
+	    	$profile->save();
+    	} elseif ($request->input('gender')) {
+    		$status->update([
+	    		'gender' => request('gender'),
+	    	]);
+	    	$status->save();
+    	} elseif ($request->input('marital_status')) {
+    		$status->update([
+		    	'marital_status' => request('marital_status'),
+	    	]);
+	    	$status->save();
+    	} elseif ($request->input('city')) {
+			$location->update([
+	    		'city' => request('city'),
+	    	]);
+	    	$location->save();
+    	} elseif ($request->input('district')) {
+			$location->update([
+	    		'district' => request('district'),
+	    	]);
+	    	$location->save();
+    	} elseif ($request->input('ward')) {
+			$location->update([
+	    		'ward' => request('ward'),
+	    	]);
+	    	$location->save();
     	}
 
-    	// $profile->update([
-    	// 	'first_name' => request('first_name'),
-    	// 	'last_name' => request('last_name'),
-    	// 	'date_of_birth' => request('date_of_birth'),
-    	// 	'mobile_number' => request('mobile_number')
-    	// ]);
-    	// $profile->save();
+    
 
-    	$status->update([
-    		'gender' => request('gender'),
-	    	'marital_status' => request('marital_status'),
-    	]);
-    	$status->save();
 
     	$location->update([
     		'city' => request('city'),
