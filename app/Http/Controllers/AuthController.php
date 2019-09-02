@@ -65,7 +65,8 @@ class AuthController extends Controller
         $credentials['deleted_at'] = null;
 
         if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        	return $this->jsonResponse();
+            // return response()->json(['error' => 'Unauthorized'], 401);
         }
 
         return $this->respondWithToken($token);
@@ -116,9 +117,23 @@ class AuthController extends Controller
 
     protected function respondWithToken($token)
     {
+
         return response()->json([
+        	'status' => 200,
             'access_token' => $token,
             'token_type'   => 'bearer',
+            'message' => 'Welcome back, Enroll with a smile'
         ]);
+    }
+
+    public function jsonResponse()
+    {
+    	
+
+    	return response()->json([
+    		'status' => 401,
+    		'error' => "Unauthorized",
+    		'message' => "Invalid Email or password combination",
+    	]);
     }
 }

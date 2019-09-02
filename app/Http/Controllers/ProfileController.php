@@ -26,13 +26,27 @@ class ProfileController extends Controller
     	$status = $user->status;
     	$location = $user->location;
 
-    	$profile->update([
-    		'first_name' => request('first_name'),
-    		'last_name' => request('last_name'),
-    		'date_of_birth' => request('date_of_birth'),
-    		'mobile_number' => request('mobile_number')
-    	]);
-    	$profile->save();
+
+
+    	if ($request->input('first_name')) {
+    		$profile->update([
+	    		'first_name' => request('first_name'),
+	    	]);
+	    	$profile->save();
+    	} elseif (request->input('first_name')) {
+    		$profile->update([
+	    		'last_name' => request('last_name'),
+	    	]);
+	    	$profile->save();
+    	}
+
+    	// $profile->update([
+    	// 	'first_name' => request('first_name'),
+    	// 	'last_name' => request('last_name'),
+    	// 	'date_of_birth' => request('date_of_birth'),
+    	// 	'mobile_number' => request('mobile_number')
+    	// ]);
+    	// $profile->save();
 
     	$status->update([
     		'gender' => request('gender'),
