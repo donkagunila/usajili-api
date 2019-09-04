@@ -23,6 +23,7 @@ Route::middleware('auth:api')->group(function() {
 	Route::get('/about', 'VersionController@index');
 	Route::get('/profile', 'UserController@index');
 	Route::post('/profile/update', 'ProfileController@update');
+	Route::get('/profile/status', 'ProfileController@status');
 	Route::get('/home', 'OpeningController@random');
 });
 

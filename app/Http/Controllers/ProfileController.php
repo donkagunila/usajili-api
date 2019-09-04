@@ -126,4 +126,37 @@ class ProfileController extends Controller
             "message" => "Field was not updated",           
         ];
     }
+
+
+    public function status()
+    {
+
+        $status = 25;
+
+        $user = User::find(Auth::id());
+
+        if ($user->profile->first_name) {
+            $status = $status + 25;
+        } 
+
+        if ($user->status->gender) {
+            $status = $status + 25;
+        }
+
+        if ($user->location->city) {
+            $status = $status + 25;
+        }
+
+        // $profile = $user->profile->first_name;
+        // $status = $user->status;
+        // $location = $user->location;
+
+
+
+
+
+        return [
+            "status" => $status,        
+        ];
+    }
 }

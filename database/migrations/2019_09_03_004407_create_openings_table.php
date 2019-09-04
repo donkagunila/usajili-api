@@ -18,8 +18,8 @@ class CreateOpeningsTable extends Migration
             $table->integer('vendor_id');
             $table->longtext('desc');
             $table->integer('cost');
-            $table->timestamp('start');
-            $table->timestamp('end');
+            $table->timestamp('start')->useCurrent();
+            $table->timestamp('end')->useCurrent();
             $table->string('poster');
             $table->timestamps();
         });
