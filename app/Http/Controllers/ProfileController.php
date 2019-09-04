@@ -75,16 +75,6 @@ class ProfileController extends Controller
 	    	$location->save();
     	}
 
-    
-
-
-    	$location->update([
-    		'city' => request('city'),
-    		'district' => request('district'),
-    		'ward' => request('ward'),
-    	]);
-    	$location->save();
-
     	return new UserResource(Auth::user());
     }
 }
