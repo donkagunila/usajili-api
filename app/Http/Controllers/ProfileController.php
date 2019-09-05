@@ -81,7 +81,15 @@ class ProfileController extends Controller
 
               return $this->returnJson('Marital Status', request('marital_status'));
 
-    	} elseif ($request->input('city')) {
+    	} elseif ($request->input('nationality')) {
+            $status->update([
+                'nationality' => request('nationality'),
+            ]);
+            $status->save();
+
+              return $this->returnJson('Nationaity', request('nationality'));
+
+        } elseif ($request->input('city')) {
 			$location->update([
 	    		'city' => request('city'),
 	    	]);
