@@ -27,7 +27,10 @@ Route::middleware('auth:api')->group(function() {
 	// create personal details
 	Route::post('/profile/create', 'ProfileController@create');
 
-	
+	// create status details.
+	Route::post('/status/create', 'StatusController@create');
+
+
 	Route::get('/profile/status', 'ProfileController@status');
 	Route::get('/home', 'OpeningController@random');
 	Route::post('/category/create', 'CategoryController@store');

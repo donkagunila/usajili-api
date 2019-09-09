@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     protected $fillable = [
-    	'user_id', 'gender', 'marital_status',
+    	'user_id', 'gender', 'marital_status', 'nationality'
     ];
 
 
