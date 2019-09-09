@@ -17,6 +17,7 @@ class CreateOpeningsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('vendor_id');
             $table->string('category_id');
+            $table->string('title');
             $table->longtext('desc');
             $table->integer('cost');
             $table->dateTime('start');

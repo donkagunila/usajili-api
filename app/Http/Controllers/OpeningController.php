@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Opening;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\OpeningResource as OpeningResource;
 
 class OpeningController extends Controller
 {
     public function random()
     {
-    	return [];
+    	$openings = Opening::get();
+        return OpeningResource::collection($openings);
     }
 
     public function store(Request $request)
@@ -42,6 +44,7 @@ class OpeningController extends Controller
     	Opening::Create([
             'vendor_id' => Auth::id(),
             'category_id' => 1,
+            'title' => request('title'),
             'desc' => request('desc'),
             'cost' => request('cost'),
             'start' => request('start'),

@@ -39,6 +39,7 @@ Route::middleware('auth:api')->group(function() {
 
 	// random home posts
 	Route::get('/home', 'OpeningController@random');
+	
 	Route::post('/category/create', 'CategoryController@store');
 
 	// list all categories
