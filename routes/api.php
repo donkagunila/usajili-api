@@ -23,8 +23,16 @@ Route::middleware('auth:api')->group(function() {
 	Route::get('/about', 'VersionController@index');
 	Route::get('/profile', 'UserController@index');
 	Route::post('/profile/update', 'ProfileController@update');
+
+	// create personal details
+	Route::post('/profile/create', 'ProfileController@create');
+
+	
 	Route::get('/profile/status', 'ProfileController@status');
 	Route::get('/home', 'OpeningController@random');
+	Route::post('/category/create', 'CategoryController@store');
+	Route::get('/category/list', 'CategoryController@index');
+	Route::post('/opening/create', 'OpeningController@store');
 });
 
 	

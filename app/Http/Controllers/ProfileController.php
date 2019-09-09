@@ -118,6 +118,28 @@ class ProfileController extends Controller
     }
 
 
+    public function create(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $profile = $user->profile;
+
+        $profile->update([
+            'first_name' => request('first_name'),
+            'last_name' => request('last_name'),
+            'date_of_birth' => request('date_of_birth'),
+            'mobile_number' => request('mobile_number'),
+        ]);
+        $profile->save();
+
+        return [
+            "status" => "success",
+            "message" => "Profile Updated successfully",
+            "Profile" => $profile            
+        ];
+
+    }
+
+
     public function returnJson($item, $value)
     {
         return [

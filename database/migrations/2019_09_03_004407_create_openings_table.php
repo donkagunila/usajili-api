@@ -16,6 +16,7 @@ class CreateOpeningsTable extends Migration
         Schema::create('openings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('vendor_id');
+            $table->string('category_id');
             $table->longtext('desc');
             $table->integer('cost');
             $table->timestamp('start')->useCurrent();

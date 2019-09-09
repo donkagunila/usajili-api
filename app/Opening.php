@@ -12,4 +12,9 @@ class Opening extends Model
     {
     	return $this->belongsTo(Vendor::class);
     }
+
+    public function Category()
+    {
+    	return $this->belongsTo(Category::class);
+    }
 }
