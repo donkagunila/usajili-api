@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Location;
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class LocationController extends Controller
 {
@@ -24,7 +26,22 @@ class LocationController extends Controller
      */
     public function create()
     {
-        //
+        
+        $user = User::find(Auth::id());
+        $location = $user->location;
+
+        $location->update([
+            'city' => request('city'),
+            'district' => request('district'),
+            'ward' => request('ward'),
+        ]);
+        $location->save();
+
+        return [
+            "status" => "success",
+            "message" => "Location Updated successfully",
+            "status" => $location            
+        ];
     }
 
     /**

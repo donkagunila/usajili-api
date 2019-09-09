@@ -30,6 +30,9 @@ Route::middleware('auth:api')->group(function() {
 	// create status details.
 	Route::post('/status/create', 'StatusController@create');
 
+	// create location details
+	Route::post('/location/create', 'LocationController@create');
+
 
 	Route::get('/profile/status', 'ProfileController@status');
 	Route::get('/home', 'OpeningController@random');
