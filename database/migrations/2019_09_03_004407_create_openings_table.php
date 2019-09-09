@@ -19,8 +19,8 @@ class CreateOpeningsTable extends Migration
             $table->string('category_id');
             $table->longtext('desc');
             $table->integer('cost');
-            $table->timestamp('start')->useCurrent();
-            $table->timestamp('end')->useCurrent();
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->string('poster');
             $table->timestamps();
         });

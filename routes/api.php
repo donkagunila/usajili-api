@@ -35,9 +35,16 @@ Route::middleware('auth:api')->group(function() {
 
 
 	Route::get('/profile/status', 'ProfileController@status');
+
+
+	// random home posts
 	Route::get('/home', 'OpeningController@random');
 	Route::post('/category/create', 'CategoryController@store');
-	Route::get('/category/list', 'CategoryController@index');
+
+	// list all categories
+	Route::get('/categories/list', 'CategoryController@index');
+
+	// create openings
 	Route::post('/opening/create', 'OpeningController@store');
 });
 
