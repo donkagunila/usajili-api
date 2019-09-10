@@ -92,6 +92,8 @@ class ProfileController extends Controller
         } elseif ($request->input('city')) {
 			$location->update([
 	    		'city' => request('city'),
+                'district' => '',
+                'ward' => '',
 	    	]);
 	    	$location->save();
 
@@ -101,6 +103,7 @@ class ProfileController extends Controller
     	} elseif ($request->input('district')) {
 			$location->update([
 	    		'district' => request('district'),
+                'ward' => '',
 	    	]);
 	    	$location->save();
 
