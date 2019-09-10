@@ -177,14 +177,7 @@ class ProfileController extends Controller
             $status = $status + 25;
         }
 
-        // $profile = $user->profile->first_name;
-        // $status = $user->status;
-        // $location = $user->location;
-
-
-
-
-
+       
         return [
             "status" => $status,        
         ];
