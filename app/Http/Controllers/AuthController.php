@@ -47,7 +47,7 @@ class AuthController extends Controller
     }
 
 
-    // login user by ap
+    // login user by api
     public function login(Request $request)
     {
         // validate user data
@@ -134,6 +134,6 @@ class AuthController extends Controller
     		'status' => 401,
     		'error' => "Unauthorized",
     		'message' => "Invalid Email or password combination",
-    	]);
+    	], 401);
     }
 }
