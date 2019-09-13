@@ -47,7 +47,7 @@ class AuthController extends Controller
     }
 
 
-    // login user by api
+    // login user by ap
     public function login(Request $request)
     {
         // validate user data
