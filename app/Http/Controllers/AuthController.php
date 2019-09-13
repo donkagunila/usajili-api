@@ -57,7 +57,7 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->messages(), 200);
+            return response()->json($validator->messages(), 401);
         }
 
         $credentials = request(['email', 'password']);
