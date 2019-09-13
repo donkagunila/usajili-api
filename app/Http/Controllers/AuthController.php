@@ -123,7 +123,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type'   => 'bearer',
             'message' => 'Welcome back, Enroll with a smile'
-        ]);
+        ], 200);
     }
 
     public function jsonResponse()
