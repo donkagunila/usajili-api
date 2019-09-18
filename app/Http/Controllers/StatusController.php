@@ -19,6 +19,7 @@ class StatusController extends Controller
 	    	'gender' => request('gender'),
 	    	'marital_status' => request('marital_status'),
 	    	'nationality' => request('nationality'),
+            'occupation' => request('occupation'),
 	    ]);
 	    $status->save();
 
