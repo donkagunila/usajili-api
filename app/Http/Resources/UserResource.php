@@ -15,7 +15,7 @@ class UserResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'avatar' => 'https://i.pravatar.cc/300',
+            'avatar' => 'http://3.122.199.78:8001/uploads/avatars/'.$this->profile->avatar,
             'username' => $this->username,
             'email'  => $this->email,
             'first_name'  => $this->profile->first_name,

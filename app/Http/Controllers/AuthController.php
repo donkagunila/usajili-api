@@ -24,7 +24,7 @@ class AuthController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json($validator->messages(), 200);
+            return response()->json($validator->messages(), 401);
         }
 
         // create user
@@ -122,7 +122,7 @@ class AuthController extends Controller
         	'status' => 200,
             'access_token' => $token,
             'token_type'   => 'bearer',
-            'message' => 'Welcome back, Enroll with a smile'
+            'message' => 'Welcome back, enroll with a smile'
         ], 200);
     }
 
@@ -133,7 +133,7 @@ class AuthController extends Controller
     	return response()->json([
     		'status' => 401,
     		'error' => "Unauthorized",
-    		'message' => "Invalid Email or password combination",
+    		'message' => "Invalid email or password combination",
     	], 401);
     }
 }
