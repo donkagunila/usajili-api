@@ -50,8 +50,33 @@ class OpeningController extends Controller
             'start' => request('start'),
             'end' => request('end'),
             'poster' => request('poster'),
+            'certificate' => request('certificate'),
+            'vacancy' => request('vacancy'),
+            'terms'   => request('terms'),
+            'fee'   => request('fee'),
+            'promotion'   => request('promotion'),
         ]);
 
     	return response()->json(['message' => 'Created successfully']);
+    }
+
+
+
+    public function update(Request $request)
+    {
+        $opening = Opening::find(request('id'));
+
+        $opening->update([
+          'title' => request('title'),
+          'desc' => request('desc'),
+          'cost' => request('cost'),
+          'start' => request('start'),
+          'end' => request('end'),
+          'poster' => request('poster'),
+          'certificate' => request('certificate'),
+          'vacancy' => request('vacancy'),
+          'terms'   => request('terms'),
+          'promotion'   => request('promotion'),
+        ]);   
     }
 }

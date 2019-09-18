@@ -48,6 +48,10 @@ Route::middleware('auth:api')->group(function() {
 	// create openings
 	Route::post('/opening/create', 'OpeningController@store');
 
+
+	// update openings
+	Route::post('/opening/update', 'OpeningController@update');
+
 	// delete user accout
 	Route::post('/delete/me', 'UserController@deleteAccount');
 });
