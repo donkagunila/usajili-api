@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Events\Disabled;
 
 use Auth;
 use App\Http\Resources\UserResource as UserResource;
@@ -65,5 +66,19 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function deleteAccount()
+    {
+         $user = Auth::User();
+
+         event(new Disabled($user));
+
+         // Event to delete user
+        return [
+            "status" => "Success",
+            "Message" => "Account has been deleted successfully"
+        ];
     }
 }

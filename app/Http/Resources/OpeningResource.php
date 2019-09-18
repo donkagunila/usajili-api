@@ -17,7 +17,7 @@ class OpeningResource extends JsonResource
 
         
         return [
-            'Opening' => [
+            
                 'title' => $this->title,
                 'desc' => $this->desc,
                 'cost' => $this->cost,
@@ -25,7 +25,7 @@ class OpeningResource extends JsonResource
                 'end' => $this->end,
                 'poster' => $this->poster,
                 'category' => $this->category,
-            ]
+        
         ];
     }
 }

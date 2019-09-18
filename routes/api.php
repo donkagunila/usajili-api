@@ -47,6 +47,9 @@ Route::middleware('auth:api')->group(function() {
 
 	// create openings
 	Route::post('/opening/create', 'OpeningController@store');
+
+	// delete user accout
+	Route::post('/delete/me', 'UserController@deleteAccount');
 });
 
 	

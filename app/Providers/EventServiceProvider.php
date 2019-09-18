@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
             \App\Listeners\CreateProfile::class,
             \App\Listeners\AccountSettings::class,
         ],
+        \App\Events\Disabled::class => [
+            \App\Listeners\DeleteProfile::class,
+        ],
     ];
 
     /**

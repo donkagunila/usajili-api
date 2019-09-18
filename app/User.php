@@ -70,5 +70,7 @@ class User extends Authenticatable implements JWTSubject
     public function Status()
     {
        return $this->hasOne(Status::class);
-    }     
+    }  
+
+
 }
