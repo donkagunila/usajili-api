@@ -25,6 +25,7 @@ class UserResource extends JsonResource
             'nationality' => $this->status->nationality,
             'gender' => $this->status->gender,
             'marital_status' => $this->status->marital_status,
+            'occupation' => $this->status->occupation,
             'city' => $this->location->city,
             'district' => $this->location->district,
             'ward' => $this->location->ward,
