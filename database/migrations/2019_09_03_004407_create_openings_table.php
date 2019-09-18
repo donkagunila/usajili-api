@@ -23,6 +23,11 @@ class CreateOpeningsTable extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->string('poster');
+            $table->integer('certificate')->nullable();
+            $table->integer('vacancy')->nullable();
+            $table->string('fee')->nullable();
+            $table->string('promotion')->nullable();
+            $table->longText('terms')->nullable();
             $table->timestamps();
         });
     }

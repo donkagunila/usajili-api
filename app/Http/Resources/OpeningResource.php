@@ -26,6 +26,8 @@ class OpeningResource extends JsonResource
                 'poster' => $this->poster,
                 'category' => $this->category,
                 'vacancies' => $this->vacancy,
+                'fee'  => $this->fee,
+                'certificate' => $this->certificate,
         
         ];
     }

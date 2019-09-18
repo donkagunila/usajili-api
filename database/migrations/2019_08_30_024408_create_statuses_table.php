@@ -18,7 +18,8 @@ class CreateStatusesTable extends Migration
             $table->integer('user_id');
             $table->string('gender')->nullable();
             $table->string('marital_status')->nullable(); 
-            $table->string('nationality')->nullable();        
+            $table->string('nationality')->nullable();
+            $table->string('occupation')->nullable();        
             $table->timestamps();
         });
     }
