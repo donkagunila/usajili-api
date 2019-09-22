@@ -43,7 +43,7 @@ class OpeningController extends Controller
 
     	Opening::Create([
             'vendor_id' => Auth::id(),
-            'category_id' => 1,
+            'category_id' => request('id'),
             'title' => request('title'),
             'desc' => request('desc'),
             'cost' => request('cost'),

@@ -32,15 +32,16 @@ class AuthController extends Controller
              'username' => $request->username,
              'email'    => $request->email,
              'password' => $request->password,
-             'activation_token' => '',
-             'active' => true,
+             'activation_token' => Str::random(12),
+             'active' => false,
          ]);
 
 
         // Send Email to user.
         event(new Registration($user));
 
-        // $user->notify(new SignupActivate($user));
+        // notify user
+        $user->notify(new SignupActivate($user));
 
         // return $this->respondWithToken($token);
         return response()->json(['message' => 'Successfully Registered, email sent']);
@@ -66,7 +67,6 @@ class AuthController extends Controller
 
         if (! $token = auth()->attempt($credentials)) {
         	return $this->jsonResponse();
-            // return response()->json(['error' => 'Unauthorized'], 401);
         }
 
         return $this->respondWithToken($token);

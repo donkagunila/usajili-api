@@ -78,7 +78,7 @@ class UserController extends Controller
          // Event to delete user
         return [
             "status" => "Success",
-            "Message" => "Account has been deleted successfully"
+            "message" => "Account has been deleted successfully"
         ];
     }
 }
