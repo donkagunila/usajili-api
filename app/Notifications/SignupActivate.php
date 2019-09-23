@@ -40,10 +40,10 @@ class SignupActivate extends Notification
      */
     public function toMail($notifiable)
     {
-         // $url = url('/api/auth/signup/activate/'.$notifiable->activation_token);
+         $url = url('/api/auth/signup/activate/'.$notifiable->activation_token);
 
         // test mails
-         $url = url('/api/auth/signup/activate/');
+         // $url = url('/api/auth/signup/activate/');
 
         return (new MailMessage)
                     ->line('Fortu will change this')
