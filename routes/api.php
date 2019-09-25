@@ -52,6 +52,10 @@ Route::middleware('auth:api')->group(function() {
 	// update openings
 	Route::post('/opening/update', 'OpeningController@update');
 
+
+	// get all users
+	Route::get('/users/all/', 'UserController@all');
+
 	// delete user accout
 	Route::post('/delete/me', 'UserController@deleteAccount');
 });

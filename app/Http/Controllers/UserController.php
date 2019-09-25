@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Events\Disabled;
 
 use Auth;
+use App\User;
 use App\Http\Resources\UserResource as UserResource;
 
 
@@ -80,5 +81,14 @@ class UserController extends Controller
             "status" => "Success",
             "message" => "Account has been deleted successfully"
         ];
+    }
+
+
+
+
+    public function all()
+    {
+        $users = User::all();
+        return UserResource::collection($users);
     }
 }
