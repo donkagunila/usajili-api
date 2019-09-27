@@ -6,6 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class SignupActivate extends Notification
 {
@@ -40,16 +42,18 @@ class SignupActivate extends Notification
      */
     public function toMail($notifiable)
     {
-         $url = url('/api/auth/signup/activate/'.$notifiable->activation_token);
+         // $url = url('/api/auth/signup/activate/'.$notifiable->activation_token);
 
         // test mails
-         // $url = url('/api/auth/signup/activate/');
+         $url = url('/api/auth/signup/activate/');
 
-        return (new MailMessage)
-                    ->line('Fortu will change this')
-                    ->line('Fortu will change this')
-                    ->action('Verify Account', url($url))
-                    ->line('Asante');
+         Mail::to('donkaguila@gmail.com')->queue(new WelcomeEmail('donald'));
+
+        // return (new MailMessage)
+        //             ->line('Fortu will change this')
+        //             ->line('Fortu will change this')
+        //             ->action('Verify Account', url($url))
+        //             ->line('Asante');
     }
 
     /**

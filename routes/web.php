@@ -13,11 +13,11 @@
 
 Route::get('/', 'SiteController@index')->name('index');
 
-Route::get('preview-emails', function () {
-	$user = App\User::first();
-    $message = (new \App\Notifications\SignupActivate($user))->toMail('test@test.com');
-    return $message->render();
-});
+// Route::get('preview-emails', function () {
+// 	$user = App\User::first();
+//     $message = (new \App\Notifications\SignupActivate($user))->toMail('test@test.com');
+//     return $message->render();
+// });
 
 
 // Auth::routes();

@@ -1,5 +1,5 @@
 @component('mail::message')
-Hi {{ $user->username }}.
+{{-- Hi {{ $user->username }}. --}}
 
 You have successfully register at Usajili.
 
