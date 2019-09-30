@@ -84,13 +84,13 @@ class UserController extends Controller
     }
 
 
-      public function activateAccount()
+      public function activateAccount(Request $request)
     {
-         $user = Auth::User();
+         $user = User::where('email', request->('email'))->first();
 
          $user->active = true;
          $user->activation_token = '';
-         $user->save();
+        $user->save();
 
 
 
