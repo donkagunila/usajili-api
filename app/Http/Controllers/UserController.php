@@ -84,6 +84,25 @@ class UserController extends Controller
     }
 
 
+      public function activateAccount()
+    {
+         $user = Auth::User();
+
+         $user->active = true;
+         $user->activation_token = '';
+         $user->save();
+
+
+
+
+         // Event to delete user
+        return [
+            "status" => "Success",
+            "message" => "Account has been activated successfully"
+        ];
+    }
+
+
 
 
     public function all()

@@ -58,6 +58,8 @@ Route::middleware('auth:api')->group(function() {
 
 	// delete user accout
 	Route::post('/delete/me', 'UserController@deleteAccount');
+
+	Route::post('/activate/me', 'UserController@activateAccount');
 });
 
 	
