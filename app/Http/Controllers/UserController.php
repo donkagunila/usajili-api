@@ -84,23 +84,23 @@ class UserController extends Controller
     }
 
 
-      public function activateAccount(Request $request)
-    {
-         $user = User::where('email', request->('email'))->first();
+    //   public function activateAccount(Request $request)
+    // {
+    //      $user = User::where('email', request->('email'))->first();
 
-         $user->active = true;
-         $user->activation_token = '';
-        $user->save();
-
-
+    //      $user->active = true;
+    //      $user->activation_token = '';
+    //     $user->save();
 
 
-         // Event to delete user
-        return [
-            "status" => "Success",
-            "message" => "Account has been activated successfully"
-        ];
-    }
+
+
+    //      // Event to delete user
+    //     return [
+    //         "status" => "Success",
+    //         "message" => "Account has been activated successfully"
+    //     ];
+    // }
 
 
 
