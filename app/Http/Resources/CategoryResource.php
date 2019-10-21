@@ -18,7 +18,7 @@ class CategoryResource extends JsonResource
                 'id' => $this->id,
                 'title' => $this->title,
                 'description' => $this->description,
-                'opening' => $this->opening,
+                'opening' => PostResourse::collection($this->whenLoaded('opening')),
         ];
     }
 }
