@@ -3,7 +3,6 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\OpeningResource as OpeningResource;
 
 class CategoryResource extends JsonResource
 {
@@ -19,7 +18,7 @@ class CategoryResource extends JsonResource
                 'id' => $this->id,
                 'title' => $this->title,
                 'description' => $this->description,
-                'opening' => OpeningResource::collection($this->whenLoaded('opening')),
+                'opening' => $this->opening,
         ];
     }
 }
