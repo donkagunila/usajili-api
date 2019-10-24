@@ -23,7 +23,7 @@ class OpeningResource extends JsonResource
                 'cost' => $this->cost,
                 'start' => $this->start,
                 'end' => $this->end,
-                'poster' => $this->poster,
+                'poster' => 'http://3.122.199.78:8001/uploads/openings/'.$this->poster,
                 'category' => $this->category,
                 'vacancies' => $this->vacancy,
                 'fee'  => $this->fee,
