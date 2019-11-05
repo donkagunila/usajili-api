@@ -59,6 +59,13 @@ Route::middleware('auth:api')->group(function() {
 	// delete user accout
 	Route::post('/delete/me', 'UserController@deleteAccount');
 
+
+
+	// enroll group
+	Route::prefix('enroll')->group(function () {
+		Route::post('/personal', 'PersonalController@personal')->name('enroll.personal');
+	});
+
 });
 
 Route::post('/activate/me', 'UserController@activateAccount');

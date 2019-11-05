@@ -32,16 +32,16 @@ class AuthController extends Controller
              'username' => $request->username,
              'email'    => $request->email,
              'password' => $request->password,
-             'activation_token' => Str::random(12),
-             'active' => false,
+             'activation_token' => '',
+             'active' => true,
          ]);
 
 
         // Send Email to user.
-        event(new Registration($user));
+        // event(new Registration($user));
 
         // notify user
-        $user->notify(new SignupActivate($user));
+        // $user->notify(new SignupActivate($user));
 
         // return $this->respondWithToken($token);
         return response()->json(['message' => 'Successfully Registered, email sent']);
