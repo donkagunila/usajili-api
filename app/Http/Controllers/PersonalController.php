@@ -32,4 +32,20 @@ class PersonalController extends Controller
     	return response()->json([
                     'success' => 'Data saved successfully.'], 200);  
     }
+
+    public function check(Request $request)
+    {
+        $user_id = Auth::id();
+        $data = Personal::where([
+                    ['user_id' ,'=', $user_id],
+                    ['opening_id' ,'=', request('opening_id')],
+                ])->first();
+
+        if($data){
+            return $data;
+        } else {
+            return response()->json([
+                'message' => 'Page empty allow user to fill.'], 200);  
+        };
+    }
 }

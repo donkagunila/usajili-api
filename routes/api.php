@@ -63,8 +63,13 @@ Route::middleware('auth:api')->group(function() {
 
 	// enroll group
 	Route::prefix('enroll')->group(function () {
+		Route::post('/personal/check', 'PersonalController@check')->name('enroll.personal.check');
 		Route::post('/personal', 'PersonalController@personal')->name('enroll.personal');
+
+		Route::post('/contacts/check', 'EnContactController@check');
 		Route::post('/contacts', 'EnContactController@index')->name('enroll.contacts');
+
+		Route::post('/parents/check', 'EnParentController@check');
 		Route::post('/parents', 'EnParentController@index');
 		Route::post('/location', 'EnParentController@index');
 		Route::post('/education', 'EnParentController@index');
