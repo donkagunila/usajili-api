@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Enroll extends Model
+class En_parent extends Model
 {
     protected $guarded = [];
 }
