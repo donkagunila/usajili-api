@@ -20,7 +20,7 @@ class CreateEnLocationsTable extends Migration
             $table->string('ward');
             $table->string('city');
             $table->string('country');
-            $table->string('passport');
+            $table->string('district');
             $table->timestamps();
         });
     }

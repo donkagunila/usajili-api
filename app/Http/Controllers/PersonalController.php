@@ -5,18 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Personal;
 use Auth;
+use Illuminate\Support\Facades\Validator;
 
 class PersonalController extends Controller
 {
     public function personal(Request $request)
     {
 
+        // validate user data
+        $validator = Validator::make($request->all(), [
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'gender' => ['required'],
+            'religion' => ['required'],
+            'tribe' => ['required'],
+            'nationality' => ['required']
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->messages(), 200);
+        }
+
 		$imageName = request()->image->getClientOriginalName();
         request()->image->move('uploads/passports/', $imageName);
 
         // return $imageName;
-
-
     	$personal = Personal::create([
     		'user_id' => Auth::id(),
     		'opening_id' => request('opening_id'),

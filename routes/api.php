@@ -71,7 +71,12 @@ Route::middleware('auth:api')->group(function() {
 
 		Route::post('/parents/check', 'EnParentController@check');
 		Route::post('/parents', 'EnParentController@index');
-		Route::post('/location', 'EnParentController@index');
+
+
+		Route::post('/location/check', 'EnLocationController@check');
+		Route::post('/location', 'EnLocationController@index');
+
+
 		Route::post('/education', 'EnParentController@index');
 		Route::post('/certificate', 'EnParentController@index');
 		Route::post('/cards', 'EnParentController@index');
