@@ -19,7 +19,8 @@ class PersonalController extends Controller
             'gender' => ['required'],
             'religion' => ['required'],
             'tribe' => ['required'],
-            'nationality' => ['required']
+            'nationality' => ['required'],
+            'opening_id' => ['required'],
         ]);
 
         if($validator->fails()){
